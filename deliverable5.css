@@ -1,0 +1,91 @@
+* {
+	margin:0;
+}
+
+html, body{
+	height: 100%;
+}
+header{
+	height:15%;
+	background-color: bisque;
+}
+header h1{
+	text-align: center;
+	color: rgb(182, 152, 112);
+	text-decoration: none;
+	float: left;
+}
+header img{
+	width: 139px;
+	height: 106px;
+	float: left;
+}
+h1{
+	padding:40px;
+	color: white;
+	text-decoration: underline;
+}
+
+form{
+	padding-top: 5%;
+	text-align:center;
+	height: 200px;
+	padding-left:20px;
+}
+
+form div{
+	width: 400px;
+	height:400px;
+	margin:auto;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+#submitBtn{
+	margin-top: 30px;
+	position:relative;
+	width: 400px;
+	height: 50px;
+	border-radius:25px;
+
+}
+
+.firstForm{
+	position: relative;
+	border-radius:25px;
+}
+
+.secForm{
+	position: relative;
+	border-radius:25px;
+}
+
+label{
+	color: rgb(255, 255, 255);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+input{
+	margin: 5px;
+	border-radius: 25px;
+	width:80%;
+	height: 9%;
+	margin-left:20px;
+}
+
+
+
+.sect{
+	height: 75%;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.sectOne{
+	background-image: url("images/yokoCheesecakeFront.jpg");
+}
+
+.sectTwo{
+	background-image: url("images/yokoCheesecakeMore.png");
+	
+}
