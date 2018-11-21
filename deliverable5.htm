@@ -8,14 +8,14 @@
 	<body>
 
 		<header>
-			<img src="images/logo.jpg" alt="logo"/>
-			<h1 >Join Us!</h1>
+			<img src="images/pgnlogo.png" alt="logo"/>
+			<h1> Join Us!</h1>
+			
 		</header>
 		
 		<div class="sect sectOne">
-
-			<form>
-				<div class="firstForm">
+			<form method="post" id="form1">
+				<div id="firstForm">
 					</br></br>
 					<label class="formName">Basic Information</label></br></br>
 					<label for="name">Names</label><input type="text" id="name"/></br>
@@ -25,20 +25,25 @@
 			</form>
 		</div>
 		<div class="sect sectTwo">
-			<form>
-				<div class="secForm">
+			<form method="post" id="form2">
+				<div id="secForm">
 						</br>
 						<label class="formName">Contact Information</label><br/></br>
 						<label for="email">E-mail</label><input type="text" id="email"/></br>
 						<label for="phoneNum">Phone Number</label><input type="text" id="phoneNum"/></br>
-						<label for="occupation">Occupation</label><input type="text" id="occupation"/>
-						<button id="submitBtn">Submit</button>
+						<label for="occupation">Occupation</label><input type="text" id="occupation"/></br/>
+						<button id="submitBtn" onClick="submitForms()">Submit</button>
 				</div>
 			</form>
-
-			<!--<button class="submitBtn">Submit</button>!-->
-		
 		</div>
-
+		
+		<script>
+			function submitForms(){
+				document.getElementById("form1").submit();
+				document.getElementById("form2").submit();
+				console.log("SUBMITTED");
+			}
+		</script>
+		
 	</body>
 </html>

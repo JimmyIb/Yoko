@@ -1,11 +1,7 @@
 * {
 	-webkit-box-sizing: border-box;
 }
-html{
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-}
+
 html, body{
 	height: 100%;
 }
@@ -63,36 +59,50 @@ input{
 }
 
 #submitBtn{
-	margin-top: 10%;
-	position:relative;
-	width: 100%;
-	height: 14%;
+	border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	cursor: pointer;
 	border-radius:25px;
+	margin-top: 10%;
+	width: 100%;
+	-webkit-transition-duration: 0.4s; /* Safari */
 
+}
+#submitBtn:hover{
+	background-color: #555555;
+    color: white;
 }
 .sect{
 	height: 100%;
 	background-size: 50%;
 	background-attachment: fixed;
+	
 }
 
 .sectOne{
 	background-image: url("images/d.jpeg");
-	position: relative
+	background-size: 50%;
+	position: relative;
 }
 
 .sectTwo{
-	background-image: url("images/taiyaki.jpeg");
+	background: url("images/taiyaki.jpeg") left no-repeat, url("images/a.jpeg");
+	background-size: 50%;
 	position: relative
 }
 
-.firstForm{
+#firstForm{
 	position: relative;
 	border-radius:25px;
 	height: 350px;
 }
 
-.secForm{
+#secForm{
 	position: relative;
 	border-radius:25px;
 	height: 350px;
