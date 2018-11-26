@@ -2,7 +2,6 @@ connect scott/tiger
 
 set echo on
 
-spool D:\Database.txt
 
 set linesize 200;
 set pagesize 50;
@@ -67,7 +66,7 @@ INSERT INTO Product VALUES(3, 'Cheesecake', 'Medium', 3.4, 100);
 INSERT INTO PointsTier VALUES(2, 200, 'Silver');
 
 -- Insert into Client
-INSERT INTO Client VALUES(5, 3, 2, 100, 'Emily Datits', '422 5th Avenue', 18-22, 'emilydatits@gmail.com', 412-414-414, 'Pornstar');
+INSERT INTO Client VALUES(5, 3, 2, 100, 'Emily Datits', '422 5th Avenue', 18-22, 'emilydatits@gmail.com', 412-414-414, 'Engineer');
 
 
 
