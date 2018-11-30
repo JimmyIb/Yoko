@@ -7,6 +7,7 @@ html, body{
 }
 header{
 	height:15%;
+	margin: auto;
 	background-color: bisque;
 }
 header h1{
@@ -16,7 +17,7 @@ header h1{
 	float: left;
 }
 header img{
-	width: 10%;
+	width: auto;
 	height: 100%;
 	float: left;
 }
@@ -24,6 +25,27 @@ header h1{
 	margin: 1%;
 	color: #b69870;
 	text-decoration: underline;
+}
+#menu{
+	list-style-type: none;
+	margin-right: 10px;
+	overflow: hidden;
+}
+#menu li{
+	float: right;
+}
+
+#menu li a{
+	display: inline-block;
+	text-align: center;
+	font-size: 25px;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: #b69870;
+}
+#menu li a:hover {
+    background-color: rgb(255,188,106);
+	color: white;
 }
 form h1{
 	padding:40px;
@@ -33,9 +55,9 @@ form h1{
 
 form{
 	padding-top: 5%;
-	text-align:center;
-	height: 20%;
 	text-align: center;
+	height:auto; 
+    margin:0 auto;
 }
 
 form div{
