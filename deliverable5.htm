@@ -3,6 +3,7 @@
 	<head>
 		<title>Prototype</title>
 		<link rel="stylesheet" href="deliverable5.css"/>
+
 	</head>
 
 	<body>
@@ -33,14 +34,16 @@
 			</form>
 		</div>
 		<div class="sect sectTwo">
-			<form method="post" id="form2">
+			<form method="post" id="form2" required>
 				<div id="secForm">
 						</br>
 						<label class="formName">Contact Information</label><br/></br>
-						<label for="email">E-mail</label><input type="text" id="email"/></br>
-						<label for="phoneNum">Phone Number</label><input type="text" id="phoneNum"/></br>
-						<label for="occupation">Occupation</label><input type="text" id="occupation"/></br/>
-						<button id="submitBtn" onClick="submitForms()">Submit</button>
+						<label for="email">E-mail</label><input type="text" id="email" required=""></br>
+						<label for="phoneNum">Phone Number</label>
+						<input id="phonenum" type="tel" 
+						required="" ></br>
+						<label for="occupation">Occupation</label><input type="text" id="occupation"></br/>
+						<button id="submitBtn" >Submit</button>
 				</div>
 			</form>
 		</div>
