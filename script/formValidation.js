@@ -17,6 +17,8 @@ function validateForm(){
 	if(nameField.value === ""){
 		nameField.style.backgroundColor = invalidColor;
 		isValid = false;
+	}else{
+		nameField.style.backgroundColor = validColor;
 	}
 	
 	
@@ -44,8 +46,7 @@ function submitForms(){
 		document.getElementById("form2").submit();
 	}else{
 		window.alert("Please fill all the required fields");
-		nameField.onchange(correctInformation());
-		emailField.onchange(correctInformation());
+		nameField.onchange = validateForm;
+		emailField.onchange = validateForm;
 	}
-
 }
