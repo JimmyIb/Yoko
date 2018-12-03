@@ -66,6 +66,12 @@ form div{
 	background-color:rgba(0, 0, 0, 0.5);
 }
 
+form select{
+	width: 80%;
+	border-radius: 25px;
+	height: 9%;
+}
+
 label{
 	color: rgb(255, 255, 255);
 	font-size: 150%;

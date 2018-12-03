@@ -22,6 +22,6 @@ function verify(){
 		}
 		
 	}else{
-		window.open("databaseSite.html", "_self");
+		window.open("databaseSite.php", "_self");
 	}
 }
