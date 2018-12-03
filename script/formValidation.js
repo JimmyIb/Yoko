@@ -4,7 +4,7 @@ var phoneNumField = document.getElementById("phonenumField");
 var occupationField = document.getElementById("occupation");
 var nameField = document.getElementById("name");
 var addressField = document.getElementById("address");
-
+var ageGroupField = document.getElementById("ageGroup");
 submitButton.onclick = submitForms;
 
 var phoneNumberRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
@@ -58,6 +58,12 @@ function submitForms(){
 		xhr.send("name=" + nameField.value + "&address=" + addressField.value + "&email=" + emailField.value + "&phone=" + phonenumField.value + "&occupation=" + occupationField.value);
 		
 		window.alert("Sign up successfully!");
+		nameField.value = "";
+		emailField.value = "";
+		phoneNumField.value = "";
+		occupationField.value = "";
+		ageGroupField.value = "";
+		addressField.value = "";
 
 	}else{
 		window.alert("Please fill all the required fields accordingly");
