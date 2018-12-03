@@ -84,6 +84,7 @@
 				</tr>
 				<?php endwhile;?>
 			</table>
+			<button type="button"><a href="login.html" style="text-decoration: none; color: black">Log out</a></button>
 		</form>
 	</body>
 </html>
