@@ -38,10 +38,10 @@ header h1{
 #menu li a{
 	display: inline-block;
 	text-align: center;
-	font-size: 25px;
 	padding: 14px 16px;
 	text-decoration: none;
 	color: #b69870;
+	font-size: 150%;
 }
 #menu li a:hover {
     background-color: rgb(255,188,106);
