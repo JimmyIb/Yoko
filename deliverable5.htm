@@ -3,7 +3,7 @@
 	<head>
 		<title>Prototype</title>
 		<link rel="stylesheet" href="deliverable5.css"/>
-
+		<script src="script/serverRequest.php"></script>
 	</head>
 
 	<body>
@@ -14,7 +14,6 @@
 			</a>
 			<!--<h1> Join Us!</h1>-->
 			<nav id="menu">
-				<li><a href="login.html">LOG IN</a></li>
 				<li><a href="#">JOIN US</a></li>
 				<li><a href="#">ABOUT US</a></li>
 				<li><a href="#">MENU</a></li>
@@ -39,10 +38,9 @@
 				<div id="secForm">
 						</br>
 						<label class="formName">Contact Information</label><br/></br>
-						<label for="email">E-mail*</label><input type="text" id="emailField"></br>
+						<label for="email">E-mail*</label><input type="text" id="emailField" name="email"></br>
 						<label for="phoneNum">Phone Number</label>
-						<input id="phonenumField" type="tel" 
-						></br>
+						<input id="phonenumField" type="tel" name="phone"></br>
 						<label for="occupation">Occupation</label><input type="text" id="occupation"></br/>
 						<button type=button id="submitBtn">Submit</button>
 				</div>

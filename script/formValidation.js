@@ -1,7 +1,9 @@
 var submitButton = document.getElementById("submitBtn");
 var emailField = document.getElementById("emailField");
 var phoneNumField = document.getElementById("phonenumField");
+var occupationField = document.getElementById("occupation");
 var nameField = document.getElementById("name");
+var addressField = document.getElementById("address");
 
 submitButton.onclick = submitForms;
 
@@ -42,10 +44,23 @@ function correctInformation(){
 
 function submitForms(){
 	if(validateForm()){
-		document.getElementById("form1").submit();
-		document.getElementById("form2").submit();
+
+		const xhr = new XMLHttpRequest();
+
+		xhr.onload = function(){
+
+			console.log(xhr.responseText);
+
+		}
+
+		xhr.open("POST", "script/serverRequest.php");
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.send("name=" + nameField.value + "&address=" + addressField.value + "&email=" + emailField.value + "&phone=" + phonenumField.value + "&occupation=" + occupationField.value);
+		
+		window.alert("Sign up successfully!");
+
 	}else{
-		window.alert("Please fill all the required fields");
+		window.alert("Please fill all the required fields accordingly");
 		nameField.onchange = validateForm;
 		emailField.onchange = validateForm;
 	}
