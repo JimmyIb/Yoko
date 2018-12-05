@@ -57,7 +57,7 @@
 			<input type="text" name="searchfor" placeholder="Name to search"><br>
 			<input type="submit" name="search" id="searchName" value="Filter"><br>
 
-			<a href="php/add.php">Add To Database</a>
+			<button><a href="php/add.php">Add To Database</a></button>
 
 			<table>
 				<tr>
