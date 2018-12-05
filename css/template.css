@@ -1,0 +1,50 @@
+* {
+	-webkit-box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+header{
+	height:15%;
+	margin: auto;
+	background-color: bisque;
+}
+
+header h1{
+	text-align: center;
+	color: rgb(182, 152, 112);
+	text-decoration: none;
+	float: left;
+}
+header img{
+	width: auto;
+	height: 100%;
+	float: left;
+}
+header h1{
+	margin: 1%;
+	color: #b69870;
+	text-decoration: underline;
+}
+#menu{
+	list-style-type: none;
+	margin-right: 10px;
+	overflow: hidden;
+}
+#menu li{
+	float: right;
+}
+
+#menu li a{
+	display: inline-block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: #b69870;
+	font-size: 150%;
+}
+#menu li a:hover {
+    background-color: rgb(255,188,106);
+	color: white;
+}

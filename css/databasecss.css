@@ -1,0 +1,30 @@
+body{
+	background-color: rgb(255,228,196);
+	height: auto;
+	width: auto;
+}
+table{
+	margin: 0 auto;
+	background-color: rgb(255,204,142);
+}
+table, tr, th, td{
+	border: 1px solid black;
+
+}
+#searchName{
+	margin: 0 auto;
+	
+}
+input{
+	margin: 5px;
+	border-radius: 25px;
+	margin:1%;
+}
+button{
+	border-radius: 25px;
+}
+button a{
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}

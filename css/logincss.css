@@ -1,0 +1,76 @@
+form h1{
+	padding:40px;
+	color: white;
+	text-decoration: underline;
+}
+
+form{
+	padding-top: 5%;
+	text-align: center;
+	height:auto; 
+    margin:0 auto;
+}
+
+form div{
+	width: 20%;
+	margin:auto;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+label{
+	color: rgb(255, 255, 255);
+	font-size: 150%;
+	font-weight: bold;
+}
+
+input{
+	margin: 5px;
+	border-radius: 25px;
+	width:80%;
+	height: 9%;
+	margin:1%;
+}
+
+#loginBtn{
+	border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	cursor: pointer;
+	border-radius:25px;
+	margin-top: 10%;
+	width: 100%;
+	-webkit-transition-duration: 0.4s; /* Safari */
+
+}
+#loginBtn:hover{
+	background-color: #555555;
+    color: white;
+}
+.sect{
+	height: 100%;
+	background-size: 50%;
+	background-attachment: fixed;
+	
+}
+
+.sectOne{
+	background-image: url("../images/d.jpeg");
+	background-size: 50%;
+	position: relative;
+}
+
+
+#firstForm{
+	position: relative;
+	border-radius:25px;
+	height: 300px;
+}
+
+.formName{
+	text-decoration: underline;
+	font-size: 180%;
+}
