@@ -53,7 +53,7 @@ function submitForms(){
 
 		}
 
-		xhr.open("POST", "script/serverRequest.php");
+		xhr.open("POST", "php/serverRequest.php");
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send("name=" + nameField.value + "&address=" + addressField.value + "&email=" + emailField.value + "&phone=" + phonenumField.value + "&occupation=" + occupationField.value);
 		

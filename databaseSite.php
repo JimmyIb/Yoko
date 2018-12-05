@@ -34,28 +34,30 @@
 
 <html>
 	<head>
-		<title>Log in</title>
-		<style>
-
-			table, tr, th, td{
-
-				border: 1px solid black;
-
-			}
-
-		</style>
+		<link rel="stylesheet" href="css/template.css"/>
+		<link rel="stylesheet" href="css/databasecss.css"/>
+		<title>Client Information</title>
 	</head>
 	
 	<body>
 		<header>
-
+			<a href="#">
+				<img src="images/pgnlogo.png" alt="logo" id="logo"/>
+			</a>
+			<!--<h1> Join Us!</h1>-->
+			<nav id="menu">
+				<li><a href="#">JOIN US</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">MENU</a></li>
+				<li><a href="#">HOME</a></li>
+			</nav>
 		</header>
-
+		
 		<form method="post">
 			<input type="text" name="searchfor" placeholder="Name to search"><br>
-			<input type="submit" name="search" value="Filter"><br>
+			<input type="submit" name="search" id="searchName" value="Filter"><br>
 
-			<a href="add.php">Add To Database</a>
+			<a href="php/add.php">Add To Database</a>
 
 			<table>
 				<tr>
@@ -79,8 +81,8 @@
 					<td><?php echo $row['email'];?></td>
 					<td><?php echo $row['phonenum'];?></td>
 					<td><?php echo $row['occupation'];?></td>
-					<td><?php echo "<a href=delete.php?id=".$row['clientid'].">Delete</a>";?></td>
-					<td><?php echo "<a href=update.php?id=".$row['clientid'].">Update</a>";?></td>
+					<td><?php echo "<button><a href=php/delete.php?id=".$row['clientid'].">Delete</a></button>";?></td>
+					<td><?php echo "<button><a href=php/update.php?id=".$row['clientid'].">Update</a></button>";?></td>
 				</tr>
 				<?php endwhile;?>
 			</table>
