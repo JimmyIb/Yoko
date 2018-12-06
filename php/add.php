@@ -22,15 +22,8 @@
 	<head>
 		<title>Log in</title>
 		<link rel="stylesheet" href="../css/template.css"/>
-		<style>
-
-			table, tr, th, td{
-
-				border: 1px solid black;
-
-			}
-
-		</style>
+		<link rel="stylesheet" href="../css/databasecss.css"/>
+		
 	</head>
 	
 	<body>
@@ -38,33 +31,40 @@
 			<a href="#">
 				<img src="../images/pgnlogo.png" alt="logo" id="logo"/>
 			</a>
+			<!--<h1> Join Us!</h1>-->
+			<nav id="menu">
+				<li><a href="#">JOIN US</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">MENU</a></li>
+				<li><a href="#">HOME</a></li>
+			</nav>
 		</header>
-		<form method="post">
-			<table>
-				<tr>
-					<th>client ID</th>
-					<th>pointsTierID</th>
-					<th>points</th>
-					<th>name</th>
-					<th>address</th>
-					<th>email</th>
-					<th>phone number</th>
-					<th>occupation</th>
-				</tr>
-				<tr>
-					<td><input type=text name=clientid></td>
-					<td><input type=text name=pointstierid></td>
-					<td><input type=text name=points></td>
-					<td><input type=text name=name></td>
-					<td><input type=text name=address></td>
-					<td><input type=text name=email></td>
-					<td><input type=text name=phonenum></td>
-					<td><input type=text name=occupation></td>
-				</tr>
-			</table>
+			<form method="post">
+				<table>
+					<tr>
+						<th>client ID</th>
+						<th>pointsTierID</th>
+						<th>points</th>
+						<th>name</th>
+						<th>address</th>
+						<th>email</th>
+						<th>phone number</th>
+						<th>occupation</th>
+					</tr>
+					<tr>
+						<td><input type=text name=clientid></td>
+						<td><input type=text name=pointstierid></td>
+						<td><input type=text name=points></td>
+						<td><input type=text name=name></td>
+						<td><input type=text name=address></td>
+						<td><input type=text name=email></td>
+						<td><input type=text name=phonenum></td>
+						<td><input type=text name=occupation></td>
+					</tr>
+				</table>
 
-			<input type="submit" value="Add To Database" name="update">
+				<input type="submit" value="Add To Database" name="update">
 
-		</form>
+			</form>
 	</body>
 </html>

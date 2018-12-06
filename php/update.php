@@ -32,15 +32,7 @@
 	<head>
 		<title>Update</title>
 		<link rel="stylesheet" href="../css/template.css"/>
-		<style>
-
-			table, tr, th, td{
-
-				border: 1px solid black;
-
-			}
-
-		</style>
+		<link rel="stylesheet" href="../css/databasecss.css"/>
 	</head>
 	
 	<body>
@@ -48,6 +40,13 @@
 			<a href="#">
 				<img src="../images/pgnlogo.png" alt="logo" id="logo"/>
 			</a>
+			<!--<h1> Join Us!</h1>-->
+			<nav id="menu">
+				<li><a href="#">JOIN US</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">MENU</a></li>
+				<li><a href="#">HOME</a></li>
+			</nav>
 		</header>
 		<form method="post">
 			<table>

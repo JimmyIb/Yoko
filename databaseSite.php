@@ -52,12 +52,12 @@
 				<li><a href="#">HOME</a></li>
 			</nav>
 		</header>
-		
+		<div id="content">
 		<form method="post">
-			<input type="text" name="searchfor" placeholder="Name to search"><br>
-			<input type="submit" name="search" id="searchName" value="Filter"><br>
+			<input type="text" name="searchfor" id="searchInputText" placeholder="Name to search">
+			<input type="submit" name="search" id="filterButton" value="Filter"><br>
 
-			<button><a href="php/add.php">Add To Database</a></button>
+			<button id="addButton"><a href="php/add.php">Add To Database</a></button><br/><br/>
 
 			<table>
 				<tr>
@@ -88,5 +88,6 @@
 			</table>
 			<button type="button"><a href="login.html" style="text-decoration: none; color: black">Log out</a></button>
 		</form>
+		</div>
 	</body>
 </html>
