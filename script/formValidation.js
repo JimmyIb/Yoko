@@ -1,9 +1,9 @@
 var submitButton = document.getElementById("submitBtn");
-var emailField = document.getElementById("emailField");
-var phoneNumField = document.getElementById("phonenumField");
-var occupationField = document.getElementById("occupation");
-var nameField = document.getElementById("name");
-var addressField = document.getElementById("address");
+var emailField = document.getElementById("emailField").maxLength = "25";
+var phoneNumField = document.getElementById("phonenumField").maxLength = "10";
+var occupationField = document.getElementById("occupation").maxLength = "15";
+var nameField = document.getElementById("name").maxLength = "25";
+var addressField = document.getElementById("address").maxLength = "30";
 var ageGroupField = document.getElementById("ageGroup");
 submitButton.onclick = submitForms;
 
