@@ -2,8 +2,13 @@
 	-webkit-box-sizing: border-box;
 }
 
+
+
+
 html, body{
 	height: 100%;
+        width: 100%;
+        display: inline-block;
 }
 
 
@@ -15,16 +20,13 @@ header img {
 
 body {
     height: 125vh;
+    background-image: linear-gradient(orange, white);
     background-size: cover;
     font-family: sans-serif;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    padding: 30px;
+    position: fixed;
+    padding-top: 80px;
 }
 
-main {
-    color: white;
-}
 
 header {
 	background-color: white;
@@ -38,13 +40,17 @@ header {
         box-shadow: 0 0 10px 0 grey;
 }
 
+.topnav {
+    float: right;
+}
+
 header * {
     display: inline;
 }
 
-header li {
+header li {  
     margin: 20px;
-	float: right;
+    float: right;
 }
 
 li a{
