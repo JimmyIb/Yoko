@@ -5,46 +5,54 @@
 html, body{
 	height: 100%;
 }
-header{
-	height:15%;
-	margin: auto;
-	background-color: bisque;
+
+
+header img {
+    height: 80px;
+    margin-left: 40px;
 }
 
-header h1{
-	text-align: center;
-	color: rgb(182, 152, 112);
-	text-decoration: none;
-	float: left;
+
+body {
+    height: 125vh;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 30px;
 }
-header img{
-	width: auto;
-	height: 100%;
-	float: left;
+
+main {
+    color: white;
 }
-header h1{
-	margin: 1%;
-	color: #b69870;
-	text-decoration: underline;
+
+header {
+	background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px 0 grey;
 }
-#menu{
-	list-style-type: none;
-	margin-right: 10px;
-	overflow: hidden;
+
+header * {
+    display: inline;
 }
-#menu li{
+
+header li {
+    margin: 20px;
 	float: right;
 }
 
-#menu li a{
-	display: inline-block;
-	text-align: center;
+li a{
 	padding: 14px 16px;
 	text-decoration: none;
-	color: #b69870;
-	font-size: 150%;
+	color: orange;
+	font-size: 115%;
 }
-#menu li a:hover {
-    background-color: rgb(255,188,106);
-	color: white;
+li a:hover {
+	color: rgb(173, 153, 133);
 }
