@@ -13,18 +13,32 @@
 	if(isset($_POST['update']))
 	{
 
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '';
-		$dbname = 'yokotest';
+		if(empty($_POST['clientid']) || empty($_POST['name']) || empty($_POST['email']))
+		{
 
-		$sql = "UPDATE client SET name = '$_POST[name]', pointstierid = '$_POST[pointstierid]', points = '$_POST[points]', address = '$_POST[address]', email = '$_POST[email]', phoneNum = '$_POST[phonenum]', occupation = '$_POST[occupation]' WHERE clientID='$_POST[clientid]'";
-		$conn = mysqli_connect($servername, $username, $password, $dbname);
+			$message = "Please provide a client ID, a name and an email";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 
-		if(mysqli_query($conn, $sql))
-			header("refresh:1; url=../databaseSite.php");
+		}
 		else
-			echo "Not Updated";
+		{
+
+			$servername = 'localhost';
+			$username = 'root';
+			$password = '';
+			$dbname = 'yokotest';
+
+			$sql = "UPDATE client SET name = '$_POST[name]', agegroup = '$_POST[agegroup]', pointstierid = '$_POST[pointstierid]', points = '$_POST[points]', address = '$_POST[address]', email = '$_POST[email]', phoneNum = '$_POST[phonenum]', occupation = '$_POST[occupation]' WHERE clientID='$_POST[clientid]'";
+			$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+			if(mysqli_query($conn, $sql))
+				header("refresh:1; url=../databaseSite.php");
+			else
+				echo "Not Updated";
+
+		}
+
+		
 	}
 
 ?>
@@ -41,12 +55,6 @@
 				<img src="../images/pgnlogo.png" alt="logo" id="logo"/>
 			</a>
 			<!--<h1> Join Us!</h1>-->
-			<nav id="menu">
-				<li><a href="#">JOIN US</a></li>
-				<li><a href="#">ABOUT US</a></li>
-				<li><a href="#">MENU</a></li>
-				<li><a href="#">HOME</a></li>
-			</nav>
 		</header>
 		<form method="post">
 			<table>
@@ -55,6 +63,7 @@
 					<th>pointsTierID</th>
 					<th>points</th>
 					<th>name</th>
+					<th>age group</th>
 					<th>address</th>
 					<th>email</th>
 					<th>phone number</th>
@@ -67,6 +76,7 @@
 							echo "<td><input type=text name=pointstierid value=".$row['pointstierid']."></td>";
 							echo "<td><input type=text name=points value=".$row['points']."></td>";
 							echo "<td><input type=text name=name value=".$row['name']."></td>";
+							echo "<td><input type=text name=agegroup value=".$row['agegroup']."></td>";
 							echo "<td><input type=text name=address value=".$row['address']."></td>";
 							echo "<td><input type=text name=email value=".$row['email']."></td>";
 							echo "<td><input type=text name=phonenum value=".$row['phonenum']."></td>";
@@ -81,3 +91,4 @@
 		</form>
 	</body>
 </html>
+
