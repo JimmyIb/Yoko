@@ -1,92 +1,84 @@
-form h1{
-	padding:40px;
-	color: white;
-	text-decoration: underline;
-}
-
-form{
-	padding-top: 5%;
-	text-align: center;
-	height:auto; 
-    margin:0 auto;
-}
-
-form div{
-	width: 20%;
-	margin:auto;
-	background-color:rgba(0, 0, 0, 0.5);
-}
-
-form select{
-	width: 80%;
-	border-radius: 25px;
-	height: 9%;
-}
-
-label{
-	color: rgb(255, 255, 255);
-	font-size: 150%;
-	font-weight: bold;
-}
-
-input{
-	margin: 5px;
-	border-radius: 25px;
-	width:80%;
-	height: 9%;
-	margin:1%;
-}
-
-#submitBtn{
-	border: none;
-    color: black;
-    padding: 16px 32px;
-    text-align: center;
+.form-register-with-email .form-log-in-with-existing{
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-	cursor: pointer;
-	border-radius:25px;
-	margin-top: 10%;
-	width: 100%;
-	-webkit-transition-duration: 0.4s; /* Safari */
+    padding: 4px 8px;
+    font-weight: normal;
+    color: black;
 
 }
-#submitBtn:hover{
-	background-color: #555555;
-    color: white;
-}
-.sect{
-	height: 100%;
-	background-size: 50%;
-	background-attachment: fixed;
-	
+
+.form-register-with-email select{
+    background-color: #ffffff;
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: auto;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
 }
 
-.sectOne{
-	background-image: url("../images/d.jpeg");
-	background-size: 50%;
-	position: relative;
+/*	Making the form responsive. Remove these media queries
+    if you don't need the form to work on mobile devices. */
+
+@media (max-width: 900px) {
+
+    .form-register{
+        margin: 20px auto;
+    }
+
+    .form-register-with-email{
+        position: relative;
+        display: block;
+        margin: 0;
+    }
+
+    .form-register-with-email .form-white-background{
+        margin: 0 auto 32px;
+    }
+
+    .form-register-with-email:after{
+        bottom: -80px;
+        left: 50%;
+        margin-left: -25px;
+    }
+
+    .form-sign-in-with-social {
+        margin-top: 105px;
+    }
+
 }
 
-.sectTwo{
-	background: url("../images/taiyaki.jpeg") left no-repeat,  url("../images/tsukimi_dango.jpeg");
-	background-size: 50%;
-	position: relative
-}
+@media (max-width: 600px) {
 
-#firstForm{
-	position: relative;
-	border-radius:25px;
-	height: 350px;
-}
+    .form-register-with-email .form-white-background{
+        width: 300px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 
-#secForm{
-	position: relative;
-	border-radius:25px;
-	height: 350px;
-}
-.formName{
-	text-decoration: underline;
-	font-size: 180%;
+    .form-register-with-email .form-row > label span{
+        display: block;
+        text-align: left;
+        padding: 0 0 10px;
+    }
+
+    .form-register-with-email input{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .form-register-with-email .form-checkbox input{
+        display: inline-block;
+        margin-left: 0;
+    }
+
+    .form-register-with-email .form-checkbox span{
+        width: 200px !important;
+    }
+
+    .form-register-with-email:after{
+        bottom: -80px;
+        left: 50%;
+        margin-left: -25px;
+    }
+
 }
