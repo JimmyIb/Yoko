@@ -1,10 +1,10 @@
 <?php
-
+	include 'helper.php';
 	$servername = 'localhost';
 	$username = 'root';
 	$password = '';
 	$dbname = 'yokotest';
-
+	
 	$query = "SELECT * FROM client WHERE clientid='$_GET[id]'";
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -72,20 +72,11 @@
 				<tr>
 					<?php $row = mysqli_fetch_array($result);
 
-							echo "<td><input type=text name=clientid value=".$row['clientid']."></td>";
-							echo "<td><input type=text name=pointstierid value=".$row['pointstierid']."></td>";
-							echo "<td><input type=text name=points value=".$row['points']."></td>";
-							echo "<td><input type=text name=name value=".$row['name']."></td>";
-							echo "<td><input type=text name=agegroup value=".$row['agegroup']."></td>";
-							echo "<td><input type=text name=address value=".$row['address']."></td>";
-							echo "<td><input type=text name=email value=".$row['email']."></td>";
-							echo "<td><input type=text name=phonenum value=".$row['phonenum']."></td>";
-							echo "<td><input type=text name=occupation value=".$row['occupation']."></td>";
+						editForm($row);
 
 					?>
 				</tr>
 			</table>
-
 			<input type="submit" value="update" name="update">
 
 		</form>

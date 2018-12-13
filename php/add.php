@@ -2,7 +2,7 @@
 
 	if(isset($_POST['update']))
 	{
-
+/*
 		$servername = 'localhost';
 		$username = 'root';
 		$password = '';
@@ -15,6 +15,10 @@
 			header("refresh:1; url=../databaseSite.php");
 		else
 			echo "Not Added";
+*/
+	include 'helper.php';
+	addRecord();
+		
 	}
 
 ?>
@@ -47,19 +51,31 @@
 						<th>points</th>
 						<th>name</th>
 						<th>address</th>
-						<th>email</th>
-						<th>phone number</th>
-						<th>occupation</th>
+						
 					</tr>
+		
 					<tr>
 						<td><input type=text name=clientid></td>
 						<td><input type=text name=pointstierid></td>
 						<td><input type=text name=points></td>
 						<td><input type=text name=name></td>
 						<td><input type=text name=address></td>
+					</tr>
+					
+				</table>
+				<br/>
+				<table>
+					<tr>
+						<th>email</th>
+						<th>phone number</th>
+						<th>occupation</th>
+						<th>age group</th>
+					</tr>
+					<tr>
 						<td><input type=text name=email></td>
 						<td><input type=text name=phonenum></td>
 						<td><input type=text name=occupation></td>
+						<td><input type=text name=agegroup></td>
 					</tr>
 				</table>
 
