@@ -19,7 +19,7 @@
         {
 
             $errorFound = true;
-            $errorEmail = "Field is required.";
+            $errorEmail = "Email is required.";
 
         }
         else
@@ -35,7 +35,7 @@
         {
 
             $errorFound = true;
-            $errorPass = "Field is required.";
+            $errorPass = "Password is required.";
 
         }
 
