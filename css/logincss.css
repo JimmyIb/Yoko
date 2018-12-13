@@ -160,7 +160,10 @@
 }
 
 #error{
-
     color: rgb(255, 120, 120);
-
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 10px;
+    padding-left: 130px;
 }
+
