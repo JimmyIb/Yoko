@@ -1,3 +1,47 @@
+<?php
+
+    include 'php/validation.php';
+    $errorName = $errorEmail = $errorPass = $errorAddress = $errorPhone = $errorOccupation = "";
+    $name = $email = $pass = $address = $phone = $occupation = "";
+
+    //IF USER PRESSES SUBMIT BTN
+    if(isset($_POST['submit']))
+    {
+
+        //INITIALIZING A FEW VARS
+        $email = $_POST['email'];
+        $pass =  $_POST['pass'];
+
+        //VARS FOR ERROR
+        $errorFound = false;
+
+        if(empty($email))
+        {
+
+            $errorFound = true;
+            $errorEmail = "Field is required.";
+
+        }
+        else
+        {
+
+            $errorEmail = checkEmail($email);
+            if($errorEmail != "")
+                $errorFound = true;
+
+        }
+
+        if(empty($pass))
+        {
+
+            $errorFound = true;
+            $errorPass = "Field is required.";
+
+        }
+
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,8 +55,8 @@
 			<nav>
                                 <li><a href="https://yokocheesecake.business.site/">Home</a></li>
                                 <li><a href="https://yokocheesecake.business.site/#summary">About Us</a></li>
-				<li><a href="deliverable5.htm">Join Us</a></li>
-				<li><a href="login.html">Log In</a></li>
+				<li><a href="loyaltyform.php">Join Us</a></li>
+				<li><a href="login.php">Log In</a></li>
                            
 			</nav>	
 		</header>
@@ -28,19 +72,21 @@
                              
                              <div class="form-row">
                                  <label>
-                                     <span>Username</span>
-                                     <input type="text" id="usernameField"/>
+                                     <span>E-mail</span>
+                                     <input type="text" id="emailField" name="email" value="<?= $email ?>"/>
+                                     <span id="error"><?= $errorEmail ?></span>
                                  </label>
                              </div>
                              
                              <div class="form-row">
                                  <label>
                                      <span>Password</span>
-                                     <input type="password" name="password" id="passwordField">
+                                     <input type="password" name="pass" id="passwordField" value="<?= $pass ?>">
+                                     <span id="error"><?= $errorPass ?></span>
                                  </label>
                              </div>
                              <div class="form-row">
-                                 <button type="button" id="loginBtn">Log in</button>
+                                 <button type="submit" name="submit">Log in</button>
                              </div>
                          </div>
                          
