@@ -16,18 +16,41 @@
                            
 			</nav>	
 		</header>
-		
-		<div class="sect sectOne">
-			<form method="post" id="form1">
-				<div id="firstForm">
-					</br></br>
-					<label class="formName">Log in</label></br></br>
-					<label>Username</label><input type="text" id="usernameField"/></br>
-					<label>Password</label><input type="password" id="passwordField"/>
-					<button type=button id="loginBtn">Log in</button>
-				</div>
-			</form>
-		</div>
+            
+             <div class="main-content">
+                 <form class="form-login" method="post" action="#">
+                     <div class="form-log-in-with-email">
+                         <div class="form-white-background">
+                             
+                             <div class="form-title-row">
+                                 <h1>Log in</h1>
+                             </div>
+                             
+                             <div class="form-row">
+                                 <label>
+                                     <span>Username</span>
+                                     <input type="text" id="usernameField"/>
+                                 </label>
+                             </div>
+                             
+                             <div class="form-row">
+                                 <label>
+                                     <span>Password</span>
+                                     <input type="password" name="password" id="passwordField">
+                                 </label>
+                             </div>
+                             <div class="form-row">
+                                 <button type="button" id="loginBtn">Log in</button>
+                             </div>
+                         </div>
+                         
+                         <a href="#" class="form-forgotten-password">Forgot password &middot;</a>
+                         <a href="deliverable5.htm" class="form-create-an-account">Create an account &rarr;</a>
+
+                     </div>
+                 </form>
+             </div>      
+            
 		<script src="script/loginscript.js"></script>
 	</body>
 </html>
