@@ -1,8 +1,10 @@
 <?php
 
     include 'php/validation.php';
-    $errorName = $errorEmail = $errorPass = $errorAddress = $errorPhone = $errorOccupation = "";
-    $name = $email = $pass = $address = $phone = $occupation = "";
+    include 'php/sqlHelper.php';
+
+    $errorName = $errorEmail = $errorAddress = $errorPhone = $errorOccupation = "";
+    $name = $email = $address = $phone = $occupation = "";
 
     //IF USER PRESSES SUBMIT BTN
     if(isset($_POST['submit']))
@@ -11,8 +13,9 @@
         //INITIALIZING A FEW VARS
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $pass =  $_POST['pass'];
         $address = $_POST['address'];
+        $agegroup = $_POST['agegroup'];
+        $agegroup = $_POST['agegroup'];
         $phone = $_POST['phone'];
         $occupation = $_POST['occupation'];
 
@@ -24,6 +27,7 @@
 
             $errorFound = true;
             $errorName = "Name is required.";
+            echo "empty name";
 
         }
         else
@@ -40,6 +44,7 @@
 
             $errorFound = true;
             $errorEmail = "Email is required.";
+            echo "empty email";
 
         }
         else
@@ -51,23 +56,22 @@
 
         }
 
-        if(empty($pass))
-        {
-
-            $errorFound = true;
-            $errorPass = "Password is required.";
-
-        }
-
-        if($phone != "")
+        if(!empty($phone))
         {
 
             $errorPhone = checkPhone($phone);
-                    if($errorPhone != "")
-                        $errorFound = true;
+                if($errorPhone != "")
+                    $errorFound = true;
 
         }
-        
+
+        if($errorFound === false){
+
+            $results = sendToDB('localhost', 'root', '', 'yokotest', addRowClient(0, $name, $address, $agegroup, $email, $phone, $occupation));
+            echo $results;
+
+        }
+
 
     }
 
@@ -124,7 +128,7 @@
                             <label>
                                 <span>Name *</span>
                                 <input type="text" name="name" maxlength="30" value="<?= $name ?>">
-                                <span id="error"><?= $errorName?></span>
+                                <span id="error"><?= $errorName; ?></span>
                             </label>
                         </div>
                         
@@ -132,15 +136,7 @@
                         <label>
                             <span>Email *</span>
                             <input type="email" id="emailField" name="email" value="<?= $email ?>">
-                            <span id="error"><?= $errorEmail?></span>
-                        </label>
-                        </div>
-                        
-                        <div class="form-row">
-                        <label>
-                            <span>Password *</span>
-                            <input type="password" name="pass">
-                            <span id="error"><?= $errorPass?></span>
+                            <span id="error"><?= $errorEmail; ?></span>
                         </label>
                         </div>
                         
@@ -154,12 +150,12 @@
                         <div class="form-row">
                             <label>
                                 <span>Age Group</span>
-                                <select id="ageGroup">
+                                <select id="ageGroup" name="agegroup">
                                     <option value="noAgeGroup"></option>
                                     <option value="0-18">Under 18</option>
-                                    <option value="18to25">19-25</option>
-                                    <option value="25to60">26-60</option>
-                                    <option value="50andolder">61 and older</option>
+                                    <option value="19-25">19-25</option>
+                                    <option value="26-60">26-60</option>
+                                    <option value="61-more">61 and older</option>
 				                </select>
                             </label>
                         </div>
@@ -168,6 +164,7 @@
                             <label>
                                 <span>Phone Number</span>
                                 <input id="phonenumField" type="tel" name="phone" maxlength="12" value="<?= $phone ?>">
+                                <span id="error"><?= $errorPhone; ?></span>
                             </label>
                         </div>
                         
@@ -175,6 +172,7 @@
                             <label>
                                 <span>Occupation</span>
                                 <input type="text" id="occupation" name="occupation" maxlength="20" value="<?= $occupation ?>">
+                                <span id="error"><?= $errorOccupation; ?></span>
                             </label>
                         </div>
                         
