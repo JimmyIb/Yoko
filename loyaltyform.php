@@ -27,7 +27,6 @@
 
             $errorFound = true;
             $errorName = "Name is required.";
-            echo "empty name";
 
         }
         else
@@ -44,7 +43,6 @@
 
             $errorFound = true;
             $errorEmail = "Email is required.";
-            echo "empty email";
 
         }
         else
@@ -99,8 +97,6 @@
         <title>Yoko Cheesecake Loyalty Form</title>
         <link rel="stylesheet" href="css/template.css"/>
         <link rel="stylesheet" href="css/deliverable5.css"/>
-
-        <script src="php/serverRequest.php"></script>
 	</head>
 
 	<body>

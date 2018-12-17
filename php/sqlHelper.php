@@ -4,7 +4,7 @@
 
 		$clientid = rand(0,99999);
 
-		return "INSERT INTO 'client' ('clientid', 'points', 'name', 'address', 'agegroup', 'email', 'phonenumber', 'occupation') VALUES ('".$clientid."', '".$points."', '".$name."', '".$address."', '".$agegroup."', '".$email."', '".$phonenumber."', '".$occupation."')";
+		return "INSERT INTO client (clientid, points, name, address, agegroup, email, phonenumber, occupation) VALUES ('$clientid', '$points', '$name', '$address', '$agegroup', '$email', '$phonenumber', '$occupation')";
 
 	}
 
@@ -12,13 +12,13 @@
 
 		$tierId = rand(0, 99999);
 
-		return "INSERT INTO pointstier (tierid, points, name) VALUES (".$points.", ".$name.")";
+		return "INSERT INTO pointstier (tierid, points, name) VALUES ('$tierId', '$points', '$name')";
 
 	}
 
 	function deleteRow($table, $id){
 
-		return "DELETE FROM ".$table." WHERE ".$id;
+		return "DELETE FROM ".$table." WHERE clientid=".$id;
 
 	}
 
@@ -39,16 +39,17 @@
 	function sendToDB($servername, $username, $password, $dbname, $query)
 	{
 
-		echo "starting";
-
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
+
 		$results = mysqli_query($conn, $query);
 
-		if($results)
+		if($results){
+
 			return true;
-
-
+			
+		}
 		return false;
+
 
 	}
 

@@ -1,6 +1,52 @@
 <?php
-
 	
+	include '../php/sqlHelper.php';
+	include '../php/validation.php';
+
+	if(isset($_POST['search']))
+	{
+
+		$searchFor = $_POST['searchfor'];
+		$searchResult = checkNoWhiteSpace($searchFor);
+
+		if($searchResult == "")
+		{
+
+			$results = filterTable(searchFor($searchFor));
+
+		}else{
+
+			echo $searchResult;
+
+		}
+
+	}
+	else if(isset($_POST['addClient']))
+	{
+
+		header("Location: addClient.php");
+
+	}
+	else
+	{
+
+		$results = filterTable("SELECT * FROM client");
+
+	}
+
+	function filterTable($query)
+	{
+
+		$servername = 'localhost';
+		$username = 'root';
+		$password = '';
+		$dbname = 'yokotest';
+
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		$filterResults = mysqli_query($conn, $query);
+		return $filterResults;
+
+	}
 
 ?>
 <html>

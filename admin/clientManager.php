@@ -17,7 +17,7 @@
 
 		}else{
 
-			echo $seachResult;
+			echo $searchResult;
 
 		}
 
@@ -26,6 +26,12 @@
 	{
 
 		header("Location: addClient.php");
+
+	}
+	else if(isset($_POST['']))
+	{
+
+
 
 	}
 	else
@@ -95,8 +101,8 @@
 					<td><?php echo $row['email'];?></td>
 					<td><?php echo $row['phonenumber'];?></td>
 					<td><?php echo $row['occupation'];?></td>
-					<td><?php echo "<button><a href=php/delete.php?id=".$row['clientid'].">Delete</a></button>";?></td>
-					<td><?php echo "<button><a href=php/update.php?id=".$row['clientid'].">Update</a></button>";?></td>
+					<td><?php echo "<button><a href=delClient.php?id=".$row['clientid'].">Delete</a></button>";?></td>
+					<td><?php echo "<button><a href=updateClient.php?id=".$row['clientid'].">Update</a></button>";?></td>
 				</tr>
 				<?php endwhile;?>
 			</table>
