@@ -7,7 +7,6 @@
 	
 	$query = "SELECT * FROM client WHERE clientid='$_GET[id]'";
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
-
 	$result = mysqli_query($conn, $query);
 
 	if(isset($_POST['update']))

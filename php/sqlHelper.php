@@ -1,5 +1,5 @@
 <?php
-	
+
 	function addRowClient($points, $name, $address, $agegroup, $email, $phonenumber, $occupation){
 
 		$clientid = rand(0,99999);
@@ -61,7 +61,7 @@
 		$results = mysqli_query($conn, $query);
 
 		if($results){
-
+			
 			return $results;
 			
 		}

@@ -1,0 +1,9 @@
+{
+
+	"require":{
+
+		"endroid/qr-code": "^3.5"
+
+	}
+
+}

@@ -2,6 +2,8 @@
 
     include 'php/validation.php';
     include 'php/sqlHelper.php';
+    include 'mail/mailerYoko.php';
+    include 'qrcode/qrcodeGenerator.php';
 
     $errorName = $errorEmail = $errorAddress = $errorPhone = $errorOccupation = "";
     $name = $email = $address = $phone = $occupation = "";
@@ -65,8 +67,21 @@
 
         if($errorFound === false){
 
-            $results = sendToDB('localhost', 'root', '', 'yokotest', addRowClient(0, $name, $address, $agegroup, $email, $phone, $occupation));
-            echo $results;
+            $query = addRowClient(0, $name, $address, $agegroup, $email, $phone, $occupation);
+            $results = sendToDB('localhost', 'root', '', 'yokotest', $query);
+
+            if($results != false)
+            {
+
+                $query = getRow("client", "email", $email);
+                $results = sendToDB('localhost', 'root', '', 'yokotest', $query);
+                $row = mysqli_fetch_array($results);
+
+                $clientid = $row['clientid'];
+                generateCode($clientid);
+                sendMail($email);
+
+            }
 
         }
 
