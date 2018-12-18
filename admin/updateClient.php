@@ -4,7 +4,19 @@
 	include '../php/sqlHelper.php';
 
 	$errorName = $errorEmail = $errorAddress = $errorPhone = $errorOccupation = "";
-    $points = $name = $email = $address = $phone = $occupation = "";
+
+	$query = getRow("client", "clientid", $_GET['id']);
+	$result = sendToDB('localhost', 'root', '', 'yokotest', $query);
+	$row = mysqli_fetch_array($result);
+
+	$clientid = $row['clientid'];
+	$points = $row['points'];
+    $name = $row['name'];
+    $email = $row['email'];
+    $address = $row['address'];
+    $agegroup = $row['agegroup'];
+    $phone = $row['phonenumber'];
+    $occupation = $row['occupation'];
 
 	if(isset($_POST['update']))
 	{
@@ -17,7 +29,7 @@
         $agegroup = $_POST['agegroup'];
         $phone = $_POST['phonenum'];
         $occupation = $_POST['occupation'];
-
+		
 		//VARS FOR ERROR
         $errorFound = false;
 
@@ -64,13 +76,13 @@
 
         if($errorFound === false){
 
-        	$query = addRowClient(0, $name, $address, $agegroup, $email, $phone, $occupation);
+        	$query = updateRowClient($clientid, $points, $name, $address, $agegroup, $email, $phone, $occupation);
             $results = sendToDB('localhost', 'root', '', 'yokotest', $query);
 
             if($results)
 				header("refresh:1; url=clientManager.php");
 			else
-				echo "Not deleted";
+				echo "Not Updated";
 
 
         }
@@ -80,7 +92,7 @@
 ?>
 <html>
 	<head>
-		<title>Add To Database</title>
+		<title>Update Client</title>
 		<link rel="stylesheet" href="../css/template.css"/>
         <link rel="stylesheet" href="../css/deliverable5.css"/>
 	</head>
@@ -95,7 +107,8 @@
 					<p>points</p><input type=text name=points maxlength="5" value="<?= $points ?>"></br>
 					<p>name</p><input type=text name=name maxlength="40" value="<?= $name ?>"></br>
 						<span class="error"><?= $errorName ?></span></br>
-					<p>age group</p><select name=agegroup>
+					<p>age group</p>
+					<select name=agegroup>
 						<option value="noAgeGroup"></option>
 						<option value="0-18">Under 18</option>
 						<option value="18to25">18-25</option>

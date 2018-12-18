@@ -2,7 +2,7 @@
 
 	include '../php/sqlHelper.php';
 
-	$query = deleteRow('client', $_GET['id']);
+	$query = deleteRow('client' ,'clientid' ,$_GET['id']);
 	$results = sendToDB('localhost', 'root', '', 'yokotest', $query);
 
     if($results)

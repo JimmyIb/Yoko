@@ -4,7 +4,14 @@
 	include '../php/sqlHelper.php';
 
 	$errorPoints = $errorName = "";
-    $points = $name = "";
+    
+    $query = getRow("pointstier", "tierid", $_GET['id']);
+	$result = sendToDB('localhost', 'root', '', 'yokotest', $query);
+	$row = mysqli_fetch_array($result);
+
+	$tierid = $row['tierid'];
+    $points = $row['points'];
+    $name = $row['name'];
 
 	if(isset($_POST['update']))
 	{
@@ -42,13 +49,13 @@
 
         if($errorFound === false){
 
-        	$query = addRowPointsTier($points, $name);
+        	$query = updateRowTier($tierid, $points, $name);
             $results = sendToDB('localhost', 'root', '', 'yokotest', $query);
 
             if($results)
 				header("refresh:1; url=pointsTierManager.php");
 			else
-				echo "Not deleted";
+				echo "Not Updated";
 
 
         }

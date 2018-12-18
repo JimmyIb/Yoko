@@ -3,16 +3,18 @@
 	include '../php/sqlHelper.php';
 	include '../php/validation.php';
 
+	$table = "pointstier";
+
 	if(isset($_POST['search']))
 	{
 
 		$searchFor = $_POST['searchfor'];
 		$searchResult = checkNoWhiteSpace($searchFor);
 
-		if($searchResult == "")
+		if(empty($searchFor) || $searchResult == "")
 		{
 
-			$results = filterTable(searchFor($searchFor));
+			$results = filterTable(searchFor($table, "name", $searchFor));
 
 		}else{
 
@@ -21,16 +23,16 @@
 		}
 
 	}
-	else if(isset($_POST['addClient']))
+	else if(isset($_POST['addTier']))
 	{
 
-		header("Location: addClient.php");
+		header("Location: addTier.php");
 
 	}
 	else
 	{
 
-		$results = filterTable("SELECT * FROM client");
+		$results = filterTable("SELECT * FROM $table");
 
 	}
 
@@ -51,7 +53,7 @@
 ?>
 <html>
 	<head>
-		<title>Client Manager</title>
+		<title>Points Tier Manager</title>
 	</head>
 	
 	<body>
@@ -71,8 +73,7 @@
 		<form method="post">
 			<input type="text" name="searchfor" id="searchInputText" placeholder="Name to search">
 			<input type="submit" name="search" id="filterButton" value="Filter"><br>
-			
-			<button id="addButton"><a href="../php/add.php">Add To Database</a></button><br/><br/>
+			<input type="submit" name="addTier" value="Add Points Tier"></br>
 
 			<table>
 				<tr>
@@ -86,8 +87,8 @@
 					<td><?php echo $row['tierid'];?></td>
 					<td><?php echo $row['points'];?></td>
 					<td><?php echo $row['name'];?></td>
-					<td><?php echo "<button><a href=php/delete.php?id=".$row['clientid'].">Delete</a></button>";?></td>
-					<td><?php echo "<button><a href=php/update.php?id=".$row['clientid'].">Update</a></button>";?></td>
+					<td><?php echo "<button><a href=delTier.php?id=".$row['tierid'].">Delete</a></button>";?></td>
+					<td><?php echo "<button><a href=updateTier.php?id=".$row['tierid'].">Update</a></button>";?></td>
 				</tr>
 				<?php endwhile;?>
 			</table>

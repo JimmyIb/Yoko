@@ -8,6 +8,18 @@
 
 	}
 
+	function updateRowClient($clientid, $points, $name, $address, $agegroup, $email, $phonenumber, $occupation){
+
+		return "UPDATE client SET points = '$points', name ='$name', address = '$address', agegroup = '$agegroup', email = '$email', phonenumber = '$phonenumber', occupation = '$occupation' WHERE clientid = '$clientid'";
+
+	}
+
+	function updateRowTier($tierid, $points, $name){
+
+		return "UPDATE pointstier SET points = '$points', name ='$name' WHERE tierid = '$tierid'";
+
+	}
+
 	function addRowPointsTier($points, $name){
 
 		$tierId = rand(0, 99999);
@@ -16,23 +28,29 @@
 
 	}
 
-	function deleteRow($table, $id){
+	function deleteRow($table, $col, $id){
 
-		return "DELETE FROM ".$table." WHERE clientid=".$id;
+		return "DELETE FROM ".$table." WHERE ".$col."=".$id;
+
+	}
+
+	function getRow($table, $col, $id){
+
+		return "SELECT * FROM ".$table." WHERE ".$col."='$id'";
 
 	}
 
 	function searchFor($table, $col, $searchFor)
 	{
 
-		return "SELECT * FROM ".$table." WHERE ".$col." LIKE '%".$searchfor."%'";
+		return "SELECT * FROM ".$table." WHERE ".$col." LIKE '%".$searchFor."%'";
 
 	}
 
 	function sortTable($table, $column)
 	{
 
-		return "SELECT * FROM ".$table." ORDER BY ".$column;
+		return "SELECT * FROM ".$table." ORDER BY '.$column'";
 
 	}
 
@@ -40,14 +58,14 @@
 	{
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
-
 		$results = mysqli_query($conn, $query);
 
 		if($results){
 
-			return true;
+			return $results;
 			
 		}
+
 		return false;
 
 

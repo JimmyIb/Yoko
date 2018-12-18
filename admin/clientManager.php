@@ -3,17 +3,18 @@
 	include '../php/sqlHelper.php';
 	include '../php/validation.php';
 
+	$table = "client";
+
 	if(isset($_POST['search']))
 	{
 
 		$searchFor = $_POST['searchfor'];
-
 		$searchResult = checkNoWhiteSpace($searchFor);
 
-		if($searchResult == "")
+		if(empty($searchFor) || $searchResult == "")
 		{
 
-			$results = filterTable(searchFor($searchFor));
+			$results = filterTable(searchFor($table, "name", $searchFor));
 
 		}else{
 
@@ -28,16 +29,10 @@
 		header("Location: addClient.php");
 
 	}
-	else if(isset($_POST['']))
-	{
-
-
-
-	}
 	else
 	{
 
-		$results = filterTable("SELECT * FROM client");
+		$results = filterTable("SELECT * FROM $table");
 
 	}
 

@@ -60,11 +60,10 @@
 			<table>
 				<tr>
 					<th>client ID</th>
-					<th>pointsTierID</th>
 					<th>points</th>
 					<th>name</th>
-					<th>age group</th>
 					<th>address</th>
+					<th>age group</th>
 					<th>email</th>
 					<th>phone number</th>
 					<th>occupation</th>
