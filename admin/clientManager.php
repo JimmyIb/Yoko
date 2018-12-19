@@ -53,6 +53,20 @@
 <html>
 	<head>
 		<title>Client Manager</title>
+		<style>
+			table, td, th{
+				border: 1px solid black;
+			}
+
+			table {
+				border-collapse: collapse;
+				width: 75%;
+			}
+
+			th {
+				height: 50px;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -66,7 +80,7 @@
 				<li><a href="controlPanel.php">Control Panel</a></li>
 			</nav>
 			<link rel="stylesheet" href="../css/template.css"/>
-        	<link rel="stylesheet" href="../css/deliverable5.css"/>
+        		<link rel="stylesheet" href="../css/deliverable5.css"/>
 		</header>
 		<div id="content">
 		<form method="post">
