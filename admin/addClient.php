@@ -83,6 +83,7 @@
 		<title>Add To Database</title>
 		<link rel="stylesheet" href="../css/template.css"/>
         <link rel="stylesheet" href="../css/deliverable5.css"/>
+        <link rel="stylesheet" href="../css/addClientCSS.css"/>
 	</head>
 	
 	<body>
@@ -91,26 +92,85 @@
 				<img src="../images/pgnlogo.png" alt="logo" id="logo"/>
 			</a>
 		</header>
-			<form method="post">
-					<p>points</p><input type=text name=points maxlength="5" value="<?= $points ?>"></br>
-					<p>name</p><input type=text name=name maxlength="40" value="<?= $name ?>"></br>
-						<span class="error"><?= $errorName ?></span></br>
-					<p>age group</p><select name=agegroup>
-						<option value="noAgeGroup"></option>
-						<option value="0-18">Under 18</option>
-						<option value="18to25">18-25</option>
-						<option value="25to60">25-60</option>
-						<option value="50andolder">60 and older</option>
-					</select></br>
-					<p>address</p><input type=text name=address maxlength="40" value="<?= $address ?>"></br>
-					<p>email</p><input type=text name=email maxlength="80" value="<?= $email ?>"></br>
-					<span class="error"><?= $errorEmail ?></span></br>
-					<p>phone number</p><input type=text name=phonenum maxlength="10"value="<?= $phone ?>"></br>
-					<span class="error"><?= $errorPhone ?></span></br>
-					<p>occupation</p><input type=text name=occupation maxlength="40" value="<?= $occupation ?>"></br>
-					<span class="error"><?= $errorOccupation ?></span></br>
-				<input type="submit" value="Add To Database" name="update">
+            
+            <div class="main-content">
+            <form class="form-register" method="post">
+                <div class="form-register-with-email">
+                    <div class="form-white-background">
 
-			</form>
+                        <div class="form-title-row">
+                            <h1>Add New Client</h1>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Points</span>
+                               <input type="text" name="points" maxlength="5" value="<?= $points ?>">
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Name *</span>
+                                <input type="text" name="name" maxlength="30" value="<?= $name ?>">
+                                <span id="error"><?= $errorName; ?></span>
+                            </label>
+                        </div>
+                        
+                         <div class ="form-row">    
+                        <label>
+                            <span>Email *</span>
+                            <input type="email" id="emailField" name="email" value="<?= $email ?>">
+                            <span id="error"><?= $errorEmail; ?></span>
+                        </label>
+                        </div>
+                        
+                        <div class ="form-row">
+                            <label>
+                                <span>Address</span>
+                                <input type="text" name="address" id="address" maxlength="40" value="<?= $address ?>"/>
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Age Group</span>
+                                <select id="ageGroup" name="agegroup">
+                                    <option value="noAgeGroup"></option>
+                                    <option value="0-18">Under 18</option>
+                                    <option value="19-25">19-25</option>
+                                    <option value="26-60">26-60</option>
+                                    <option value="61-more">61 and older</option>
+				                </select>
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Phone Number</span>
+                                <input id="phonenumField" type="tel" name="phone" maxlength="12" value="<?= $phone ?>">
+                                <span id="error"><?= $errorPhone; ?></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Occupation</span>
+                                <input type="text" id="occupation" name="occupation" maxlength="20" value="<?= $occupation ?>">
+                                <span id="error"><?= $errorOccupation; ?></span>
+                            </label>
+                        </div>
+                        
+                       
+                        <div class="form-row">
+                            <button type="submit" value="Add To Database" name="update" class="button">Add Client!</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+            
+		
 	</body>
 </html>
