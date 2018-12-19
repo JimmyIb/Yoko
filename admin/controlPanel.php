@@ -20,19 +20,38 @@
 	<head>
 		<title>Control Panel</title>
 	</head>
-	
+        <link rel="stylesheet" href="../css/template.css"/>
+	<link rel="stylesheet" href="../css/deliverable5.css"/>
 	<body>
-		<header>
-			<h1>Main Panel</h1>
-			<link rel="stylesheet" href="../css/template.css"/>
-        	<link rel="stylesheet" href="../css/deliverable5.css"/>
-		</header>
-		<div id="content">
-		<form method="post">
-			<input type="submit" name="customers" value="Manage Customers"></br>
-			<input type="submit" name="pointsTier" value="Manage Points Tiers"></br>
-			<input type="submit" name="account" value="Manage Account"></br>
-		</form>
-		</div>
+            <header>
+                <a href="#"><img src="../images/pgnlogo.png" alt="logo" id="logo"/></a>
+                <h1>Main Panel </h1>
+            </header>
+            
+            
+            
+            <div class="main-content">
+            <form class="form-register" method="post">
+                <div class="form-register-with-email">
+                    <div class="form-white-background">
+
+                        <div class="form-title-row">
+                            <h1>Where Would You Like To Go?</h1>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" name="customers" value="Manage Customers">Manage Customers</button>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" name="pointsTier" value="Manage Points Tiers">Manage Points Tiers</button>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" name="account" value="Manage Account">Manage Account</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+            
 	</body>
 </html>
