@@ -121,8 +121,8 @@
             <nav>
                 <li><a href="https://yokocheesecake.business.site/">Home</a></li>
                 <li><a href="https://yokocheesecake.business.site/#summary">About Us</a></li>
-				<li><a href="deliverable5.htm">Join Us</a></li>
-				<li><a href="login.html">Log In</a></li>  
+				<li><a href="loyaltyform.php">Join Us</a></li>
+				<li><a href="admin/login.php">Log In</a></li>  
 			</nav>	
 		</header>
 		
@@ -203,7 +203,7 @@
                         <button type="submit" name="submit">Register</button>
                         </div>
                     </div>
-                    <a href="login.html" class="form-log-in-with-existing">Already have an account? Login here &rarr;</a>
+                    <a href="admin/login.php" class="form-log-in-with-existing">Already have an account? Login here &rarr;</a>
                 </div>
             </form>
         </div>
