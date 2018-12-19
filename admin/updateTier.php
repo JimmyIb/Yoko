@@ -76,13 +76,38 @@
 				<img src="../images/pgnlogo.png" alt="logo" id="logo"/>
 			</a>
 		</header>
-			<form method="post">
-					<p>points</p><input type=text name=points maxlength="5" value="<?= $points ?>"></br>
-					<span class="error"><?= $errorPoints ?></span></br>
-					<p>name</p><input type=text name=name maxlength="40" value="<?= $name ?>"></br>
-					<span class="error"><?= $errorName ?></span></br>
-				<input type="submit" value="Add To Database" name="update">
+			<div class="main-content">
+            <form class="form-register" method="post">
+                <div class="form-register-with-email">
+                    <div class="form-white-background">
 
-			</form>
+                        <div class="form-title-row">
+                            <h1>Update Tier</h1>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Points</span>
+                               <input type="text" name="points" maxlength="5" value="<?= $points ?>">
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>
+                                <span>Name *</span>
+                                <input type="text" name="name" maxlength="30" value="<?= $name ?>">
+                                <span id="error"><?= $errorName; ?></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">
+                        <button type="submit" value="Add To Database" name="update">Update Tier</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+
 	</body>
 </html>
