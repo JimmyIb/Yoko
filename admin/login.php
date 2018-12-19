@@ -72,7 +72,7 @@
 			<nav>
                                 <li><a href="https://yokocheesecake.business.site/">Home</a></li>
                                 <li><a href="https://yokocheesecake.business.site/#summary">About Us</a></li>
-				<li><a href="loyaltyform.php">Join Us</a></li>
+				<li><a href="/yoko/loyaltyform.php">Join Us</a></li>
 				<li><a href="login.php">Log In</a></li>
                            
 			</nav>	
@@ -108,7 +108,7 @@
                     </div>
 
                     <a href="#" class="form-forgotten-password">Forgot password &middot;</a>
-                    <a href="deliverable5.htm" class="form-create-an-account">Create an account &rarr;</a>
+                    <a href="/yoko/loyaltyform.php" class="form-create-an-account">Create an account &rarr;</a>
 
                 </div>
             </form>
